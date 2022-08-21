@@ -1,0 +1,139 @@
+Token for APP Test
+"token": "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJJZCI6IjM1ZTcwNTA5LTg4NzgtNDY3OS1iMzM5LWE4NWM1MWNkNTM4OSIsInN1YiI6ImRjYXRldXJhQGdtYWlsLmNvbSIsImVtYWlsIjoiZGNhdGV1cmFAZ21haWwuY29tIiwibmJmIjoxNjYxMTA2NjM1LCJleHAiOjE2NjExMjgyMjgsImlhdCI6MTY2MTEwNjYzNX0.oGWGnFM3iimkIr7lNHQqsrQXLuzr24yQHBw_1MId1oBPvC-xTjKpeasc7X8U8wHfOTrxVS8bBlCm6QzdC_hw0g",
+	"login": true,
+	"errors": null
+
+)
+
+
+1)Listado de Personajes con Imagen y Nombre
+
+Get https://localhost:7117/api/characters
+
+OK
+
+2)CRUD un personaje.
+
+Post https://localhost:7117/api/characters/Create
+
+{
+  "image": "https://3.bp.blogspot.com/-B_O0MxkHv3U/T2XfRyAAeTI/AAAAAAAAGOQ/TtsaR21M3uY/s1600/sc000774a501.jpg",
+  "name": "Minnie",
+  "age": 50,
+  "weight": 75.5,
+  "history": "Nació en Connecticut, donde conocio a Mickey",
+  "movies": [
+    1,2
+  ]
+}
+
+OK
+
+Get https://localhost:7117/api/characters/Detail?Id=7
+
+OK
+
+Post https://localhost:7117/api/characters/Update
+
+{
+  "id": 7,
+  "image": "https://3.bp.blogspot.com/-B_O0MxkHv3U/T2XfRyAAeTI/AAAAAAAAGOQ/TtsaR21M3uY/s1600/sc000774a501.jpg",
+  "name": "Minnie",
+  "age": 65,
+  "weight": 75,
+  "history": "Nació en Connecticut, donde conocio a Mickey",
+"movies": [
+    2
+  ]
+
+}
+OK
+
+Get https://localhost:7117/api/characters/Detail?Id=7
+
+Post https://localhost:7117/api/characters/Delete?id=6
+
+OK
+
+3)Detalle de un Personaje = ID=3
+
+Get https://localhost:7117/api/characters/Detail?Id=2
+
+4)Busqueda de Personajes por nombre, edad, y idMovie
+
+Get https://localhost:7117/api/characters?name=Goofy
+Get https://localhost:7117/api/characters?age=56
+Get https://localhost:7117/api/characters?IdMovie=2
+OK
+
+5)Get all movies con Imagen, TItulo y FechadeCreacion
+
+Get https://localhost:7117/api/movies
+
+OK
+
+6)Detalle de Pelicula = ID=3
+
+Get https://localhost:7117/api/movies/Detail?id=1
+
+OK
+
+7)CRUD de una pelicula.
+
+Post https://localhost:7117/api/movies/Create
+
+{
+  "image": "https://3.bp.blogspot.com/-B_O0MxkHv3U/T2XfRyAAeTI/AAAAAAAAGOQ/TtsaR21M3uY/s1600/sc000774a501.jpg",
+  "titulo": "Mickey y Minni",
+  "creationDate": "2010-01-21",
+  "qualification": 4,
+  "history": "La pelicula muestra como se conocen nuestros amigos",
+  "characters": [
+    3,7
+  ]
+}
+
+Get https://localhost:7117/api/movies/Detail?Id=3
+
+OK
+
+Post https://localhost:7117/api/movies/Update
+
+{
+  
+  "id": 3,
+  "image": "https://3.bp.blogspot.com/-B_O0MxkHv3U/T2XfRyAAeTI/AAAAAAAAGOQ/TtsaR21M3uY/s1600/sc000774a501.jpg",
+  "titulo": "Mickey y Minni",
+  "creationDate": "2006-01-21",
+  "qualification": 5,
+  "history": "La pelicula muestra como se conocen nuestros amigos",
+"characters": [
+    3
+  ]
+
+}
+
+OK
+
+Get https://localhost:7117/api/movies/Detail?Id=3
+
+Post https://localhost:7117/api/movies/Delete
+
+{
+  "id": 2,
+}
+
+OK
+
+8)Busqueda de Pelicula por Nombre, IdGenero, otodas con rdenamiento ASC/DESC
+
+Get https://localhost:7117/api/movies?name=Mickey's Brain
+Get https://localhost:7117/api/movies?genre=1
+Get https://localhost:7117/api/movies?order=DESC
+
+
+9)Envio de Mails, se configuró todo con SendGrid, pero no se 
+pudo autenticar el single sender en SendGrid (requerís un dominio).
+
+Features: Create and Update, return all the scheme, perhaps should be better return only
+a message like "Created OK" or "Updated OK".

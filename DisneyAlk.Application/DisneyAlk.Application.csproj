@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DisneyAlk.Abstractions\DisneyAlk.Abstractions.csproj" />
+    <ProjectReference Include="..\DisneyAlk.Entities\DisneyAlk.Entities.csproj" />
+    <ProjectReference Include="..\DisneyAlk.Repository\DisneyAlk.Repository.csproj" />
+    <ProjectReference Include="..\DisneyAlk.Services\DisneyAlk.Services.csproj" />
+  </ItemGroup>
+
+</Project>
